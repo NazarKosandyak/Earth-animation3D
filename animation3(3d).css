@@ -1,0 +1,127 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.solar-system {
+  position: absolute;
+  background-image: url('image/jeremy-perkins-uhjiu8FjnsQ-unsplash.jpg');
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.galaxy {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform: rotateX(75deg) rotateY(0deg);
+  transform-style: preserve-3d;
+}
+
+.earth {
+
+  background-image: url('image/earth.png');
+  height: 100%;
+  background-position: center;
+  background-size: 30%;
+  transform: rotateX(-75deg);
+  background-repeat: no-repeat;
+
+
+}
+
+.pos {
+  position: absolute;
+  width: 1em;
+  height: 1em;
+
+  border-radius: 50%;
+  animation-name: pos;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 3px solid rgb(109, 107, 107);
+  border-radius: 50%;
+  animation-name: orbit;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-style: preserve-3d;
+}
+
+
+
+@keyframes orbit {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+@keyframes pos {
+  0% {
+    transform: rotateX(-90deg) rotateY(360deg) rotateZ(0deg);
+    background-color: rgb(255, 255, 255);
+  }
+
+  50% {
+    background-color: rgb(180, 180, 180);
+    box-shadow: 2px -1px 10px 13px rgba(34, 60, 80, 0.2) inset;
+    ;
+  }
+
+  70% {
+    background-color: rgb(180, 180, 180);
+    box-shadow: -19px 11px 10px 1px rgba(34, 60, 80, 0.2) inset;
+  }
+
+  100% {
+    transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg);
+    background-color: rgb(247, 247, 247);
+  }
+}
+
+/* Orbit sizes */
+#moon.orbit {
+  width: 12em;
+  height: 12em;
+  margin-top: -6em;
+  margin-left: -6em;
+}
+
+/* Planet starting positions */
+#moon .pos {
+  left: 50%;
+  top: -40px;
+
+}
+
+/* Planet animation durations */
+#moon.orbit,
+#moon .pos {
+  animation-duration: 3s;
+}
+
+/* Orbit sizes */
+
+#moon {
+  font-size: 4em;
+}
